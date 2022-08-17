@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+/* Faire les definition css en suivant les noeuds html ()*/
+/*----------  Reset ----------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; /* link's underline */
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+
+  /* Container Flux | Centrage*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #4070f4;
+}
+
+/*=============================================
+=           <div class="input-box">           =
+=============================================*/
+
+/* 1 Container Row */
+.input-box {
+  /* Position attache et taille */
+  position: relative; /* mesure en px ou em*/
+  height: 55px;
+  /*max-width: 350px;*/
+  max-width: 60px;
+  width: 100%; /* de max-width */
+
+  /* C quoi */
+  margin: 0 30px;
+  border-radius: 6px;
+
+  background: white;
+}
+
+/* Placement de input dans son container */
+/* Il doit occuper toute la taille du container */
+.input-box input {
+  /* On determine sa position (flux) et sa taille)*/
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  /*On rajoute des espacements interne. */
+  /*padding: 0 15px 0 65px;  */
+  padding: 0 15px; /* paddding: H ->R ->B ->L*/
+  outline: none; /* Pas de contour */
+  border: none;
+  border-radius: 6px;
+
+  /* Text size and weight */
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #333;
+}
+
+/* Icon bloc*/
+.input-box .search {
+  position: absolute; /* pour le replacer dans le container par superposition */
+  left: 0;
+  top: 0;
+
+  height: 100%; /* du container */
+  width: 60px;
+  /*border-radius: 6px 0 0 6px;*/
+  border-radius: 6px;
+  background-color: white;
+
+  /*Flux */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon */
+.search .search-icon {
+  font-size: 30px;
+  color: #4070f4;
+}
+.input-box .close-icon {
+  /* Positionnement */
+  position: absolute;
+
+  /* depuis le coin droit (-) pour oriente le deplacment vers la gauche*/
+  right: -45px;
+
+  /* Astuce centrer à la hauteur du container */
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 30px;
+  color: #fff;
+  /* equivalent 5 5 5 5px*/
+  padding: 5px;
+}
+
+/*=====  End of Section comment block  ======*/
