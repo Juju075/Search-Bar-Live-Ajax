@@ -30,7 +30,6 @@ body {
   /* Position attache et taille */
   position: relative; /* mesure en px ou em*/
   height: 55px;
-  /*max-width: 350px;*/
   max-width: 60px;
   width: 100%; /* de max-width */
 
@@ -39,7 +38,19 @@ body {
   border-radius: 6px;
 
   background: white;
+
+  /*Effet de transition (d'animation) - declenche à la lecture de la regle*/
+  /* https://cubic-bezier.com/ */
+  transition: all 0.6sec cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
+/*  après click sur search .open */
+/*  [.] permet une regle de modification de .input-box */
+.input-box.open {
+  max-width: 350px;
+}
+
+/*----------  .input-box  ----------*/
 
 /* Placement de input dans son container */
 /* Il doit occuper toute la taille du container */
@@ -50,7 +61,6 @@ body {
   width: 100%;
 
   /*On rajoute des espacements interne. */
-  /*padding: 0 15px 0 65px;  */
   padding: 0 15px; /* paddding: H ->R ->B ->L*/
   outline: none; /* Pas de contour */
   border: none;
@@ -61,9 +71,19 @@ body {
   font-weight: 400;
 
   color: #333;
+  transition: all 0.6sec cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Icon bloc*/
+/* Modification de .open | Augmentation du padding left de 0 à 65px*/
+.input-box.open input {
+  padding: 0 15px 0 65px;
+}
+
+/*----------  Fin  ----------*/
+
+/*----------  .input-box .search  ----------*/
+
+/* Icon bloc radius des 4 cotes d'origine*/
 .input-box .search {
   position: absolute; /* pour le replacer dans le container par superposition */
   left: 0;
@@ -71,24 +91,37 @@ body {
 
   height: 100%; /* du container */
   width: 60px;
-  /*border-radius: 6px 0 0 6px;*/
-  border-radius: 6px;
+  border-radius: 6px; /* bloc carre */
   background-color: white;
 
   /*Flux */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /*space between*/
+
+  /*Effet de transition */
+  transition: all 0.6sec cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
+/*Modification par .open*/
+.input-box.open .search {
+  border-radius: 6px 0 0 6px;
+}
+
+/*----------  Fin  ----------*/
+
+/*----------  Icon  ----------*/
 
 /* Icon */
 .search .search-icon {
   font-size: 30px;
   color: #4070f4;
+  cursor: pointer;
 }
 .input-box .close-icon {
   /* Positionnement */
   position: absolute;
+  cursor: pointer;
 
   /* depuis le coin droit (-) pour oriente le deplacment vers la gauche*/
   right: -45px;
@@ -101,6 +134,22 @@ body {
   color: #fff;
   /* equivalent 5 5 5 5px*/
   padding: 5px;
+
+  pointer-events: none;
+  transition: all 0.6sec cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/*=====  End of Section comment block  ======*/
+/*----------  Fin  ----------*/
+
+/* <span ...> Icon </span>*/
+.input-box.open .search {
+  /*transform: translateY(-50%) rotate(180deg);*/
+}
+
+/*=============================================
+           Listing Ajas         
+=============================================*/
+
+.response {
+  position: relative;
+}

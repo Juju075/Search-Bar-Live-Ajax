@@ -13,13 +13,21 @@
   </head>
   <body>
     <!-- 1 Container Row -->
-    <div class="input-box">
+    <section class="input-box">
       <!-- 1 Element -->
       <input type="text" id="" placeholder="Search..." />
       <span class="search"><i class="uil uil-search search-icon"></i></span>
       <i class="uil uil-times close-icon"></i>
-    </div>
-    <!-- -->
+    </section>
+    <!-- LiveSearch Methode 1-->
+    <section class="livesearch">
+      <form>
+        <input type="text" size="30" onkeyup="showResult(this.value)" />
+        <div id="livesearch"></div>
+      </form>
+    </section>
+
     <script src="/script.js"></script>
+    <script src="/livesearch.js"></script>
   </body>
 </html>
